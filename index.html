@@ -1,62 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Meine Webseite</title>
-        
-        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      </head>
-      <body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Webseite</title>
     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    
+    <style>
+      body {
+        background: linear-gradient(to right, #fdfbfb, #ebedee);
+        font-family: 'Roboto', sans-serif;
+      }
+      h2 {
+        font-family: 'Pacifico', cursive;
+        color: #FF6F61; /* Korallenrot */
+      }
+      p {
+        font-size: 1.1rem;
+        color: #444; /* dunkles Grau */
+      }
+      .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+      }
+      .card-title {
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 1.5rem;
+      }
+      .card-text {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.05rem;
+      }
+      .section-title {
+        font-family: 'Pacifico', cursive;
+        color: #118AB2; /* Blaugrün */
+      }
+      /* Individuelle Farben für Card-Texte */
+      .card-spielen .card-title, .card-spielen .card-text {
+        color: #FFD166; /* Gelb */
+      }
+      .card-schlafen .card-title, .card-schlafen .card-text {
+        color: #073B4C; /* Dunkelblau */
+      }
+      .card-freunde .card-title, .card-freunde .card-text {
+        color: #EF476F; /* Pink-Rot */
+      }
+    </style>
+  </head>
+  
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Meine Webseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Über</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hauptbereich mit Katze -->
+    <div class="container mt-5">
+      <div class="row">
         
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">Meine Webseite</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Über</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Kontakt</a>
-                </li>
-              </ul>
-            </div>
+        <div class="col-md-4">
+          <img src="\\lsbk-fs01\27ASS2-15$\Downloads\IMG_1571.jpeg" class="img-fluid rounded" alt="Niedliche Katze">
+        </div>
+        
+        <div class="col-md-8 d-flex align-items-center">
+          <div>
+            <h2>Hallo, ich bin eine niedliche Katze!</h2>
+            <p style="color:#118AB2;">Ich schnurre gerne, spiele mit Äpfeln und bringe Menschen zum Lächeln.</p>
           </div>
-        </nav>
-    
+        </div>
+      </div>
+    </div>
+
+    <!-- Neue Cards Section -->
+    <div class="container mt-5">
+      <h3 class="mb-4 text-center section-title">Mehr über mich</h3>
+      <div class="row">
         
-        <div class="container mt-5">
-          <div class="row">
-            
-            <div class="col-md-4">
-              <img src="IMG_1571.jpeg" class="img-fluid rounded" alt="Niedliche Katze">
-            </div>
-            
-            
-            <div class="col-md-8 d-flex align-items-center">
-              <div>
-                <h2>Hallo, ich bin eine niedliche Katze!</h2>
-                <p>Ich schnurre gerne, spiele mit Äpfeln und bringe Menschen zum Lächeln.</p>
-              </div>
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card card-spielen text-white" style="background-color: #6C63FF;">
+            <img src="https://placekitten.com/300/200" class="card-img-top" alt="Katze 1">
+            <div class="card-body">
+              <h5 class="card-title">Spielen</h5>
+              <p class="card-text">Ich liebe es, mit Bällen und Äpfeln zu spielen. Bewegung macht mich glücklich!</p>
             </div>
           </div>
         </div>
-    
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-</body>
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card card-schlafen text-dark" style="background-color: #FFD166;">
+            <img src="https://placekitten.com/301/200" class="card-img-top" alt="Katze 2">
+            <div class="card-body">
+              <h5 class="card-title">Schlafen</h5>
+              <p class="card-text">Ein Mittagsschlaf auf der Couch ist das Beste. Am liebsten in der Sonne!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card card-freunde text-white" style="background-color: #06D6A0;">
+            <img src="https://placekitten.com/302/200" class="card-img-top" alt="Katze 3">
+            <div class="card-body">
+              <h5 class="card-title">Freunde</h5>
+              <p class="card-text">Ich bringe Freude in jedes Herz und liebe es, mit Menschen Zeit zu verbringen.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  </body>
 </html>
 
