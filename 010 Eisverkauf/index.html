@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Eisverkauf</title>
+
+<script>
+function fErloesrechner() {
+
+    var menge = parseFloat(document.getElementById("menge").value);
+    var preis = parseFloat(document.getElementById("preis").value);
+    var kv = parseFloat(document.getElementById("kv").value);
+    var kf = parseFloat(document.getElementById("kf").value);
+
+    var ausgabe = "";
+
+    var bep = kf / (preis - kv);
+    bep = Math.round(bep);
+
+    var euro = bep * preis;
+
+    ausgabe += "Break-Even-Point: " + bep + " Stück<br>";
+    ausgabe += "Gewinnschwelle: " + euro.toFixed(2) + " €<br><br>";
+
+    ausgabe += "<table border='1'>";
+    ausgabe += "<tr><th>Menge</th><th>Kosten</th><th>Erlös</th><th>Gewinn</th></tr>";
+
+    for (var x = 0; x <= menge; x += 100) {
+
+        var kosten = kf + kv * x;
+        var erloes = preis * x;
+        var gewinn = erloes - kosten;
+
+        ausgabe += "<tr>";
+        ausgabe += "<td>" + x + "</td>";
+        ausgabe += "<td>" + kosten.toFixed(2) + "</td>";
+        ausgabe += "<td>" + erloes.toFixed(2) + "</td>";
+        ausgabe += "<td>" + gewinn.toFixed(2) + "</td>";
+        ausgabe += "</tr>";
+    }
+
+    ausgabe += "</table>";
+
+    document.getElementById("out").innerHTML = ausgabe;
+}
+</script>
+
+</head>
+
+<body>
+<img src="eis.png" width="300">
+<h1>Eisverkauf</h1>
+
+KV: <input id="kv" value="0.5"><br>
+KF: <input id="kf" value="500"><br>
+Menge: <input id="menge" value="1000"><br>
+Preis: <input id="preis" value="1.5"><br>
+
+<button onclick="fErloesrechner()">Start</button>
+
+<div id="out"></div>
+
+</body>
+</html>
